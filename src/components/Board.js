@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Square from "./Square";
 import calculateWinner from "../utils/calculateWinner";
-
+import '../styles/Board.css'
 
 const Board = () => {
   const [squares, setSquares] = useState(Array.from({ length: 9 }).fill(null));
@@ -19,22 +19,12 @@ const Board = () => {
     }
   }
 
-
-
-
   winner = calculateWinner(squares);
   if (winner) {
     status = `Winner: Player ${winner}`
   } else {
     status = `Player ${xIsNext ? `X` : `0`}'s turn`
   }
-
-
-
-
-
-
-
 
   return (
     <>

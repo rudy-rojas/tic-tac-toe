@@ -1,0 +1,21 @@
+
+body{
+  background-color: #121212;
+}
+.board{
+  min-width: 201px;
+  width: 543px;
+  height: 543px;
+  max-width: 543px;
+  max-height: 543px;
+  background-color:#080d2b;
+  background-image: url('/public/images/board.svg');
+  background-repeat: no-repeat;
+  background-size: 543px 543px;
+
+}
+
+
+.square {
+
+}
