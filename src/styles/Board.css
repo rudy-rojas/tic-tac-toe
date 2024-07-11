@@ -1,3 +1,9 @@
+html{
+  padding: 0;
+  margin: 0;
+
+}
+
 
 body{
   background-color: #121212;
@@ -16,6 +22,19 @@ body{
 }
 
 
-.square {
 
+.square {
+  width: 181px;
+  height: 181px;
+  float: left;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.square.simbol-x{
+  background-image: url('/public/images/x.svg');
+}
+
+.board-row{
+  clear: both;
 }

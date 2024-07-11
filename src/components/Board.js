@@ -28,8 +28,8 @@ const Board = () => {
 
   return (
     <>
-      <div className="board">
         <p>Status: {status}</p>
+      <div className="board">
         <div className="board-row">
           <Square value={squares[0]} handleClick={() => handleClick(0)} />
           <Square value={squares[1]} handleClick={() => handleClick(1)} />
