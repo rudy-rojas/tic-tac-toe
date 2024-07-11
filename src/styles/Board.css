@@ -59,6 +59,9 @@ body{
 .square.simbol-x{
   background-image: url('/public/images/x.svg');
 }
+.square.simbol-0{
+  background-image: url('/public/images/0.svg');
+}
 
 .board-row{
   clear: both;
