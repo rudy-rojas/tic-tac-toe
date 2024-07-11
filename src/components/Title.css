@@ -1,0 +1,13 @@
+@font-face {
+  font-family: DiloWorld;
+  src: url('../assets/fonts/DiloWorld.ttf');
+}
+
+.main-title {
+  font-family: DiloWorld;
+  font-size: 78px;
+  background: -webkit-linear-gradient(cyan, magenta);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

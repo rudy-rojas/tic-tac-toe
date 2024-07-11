@@ -2,6 +2,7 @@ import { useState } from "react";
 import Square from "./Square";
 import calculateWinner from "../utils/calculateWinner";
 import '../styles/Board.css'
+import Title from "./Title";
 
 const Board = () => {
   const [squares, setSquares] = useState(Array.from({ length: 9 }).fill(null));
@@ -27,8 +28,10 @@ const Board = () => {
   }
 
   return (
-    <>
+    <main className="page-wrapper">
+    <Title title={'Tic tac toe'}/>
         <p>Status: {status}</p>
+
       <div className="board">
         <div className="board-row">
           <Square value={squares[0]} handleClick={() => handleClick(0)} />
@@ -46,7 +49,7 @@ const Board = () => {
           <Square value={squares[8]} handleClick={() => handleClick(8)} />
         </div>
       </div>
-    </>
+    </main>
   );
 }
 
