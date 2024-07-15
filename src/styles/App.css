@@ -1,0 +1,36 @@
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #121212;
+}
+
+.corner-left-top {
+  /* display: inline-block; */
+  float: left;
+  width: 100%;
+  height: 100%;
+  background-image: url('/public/images/shade.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh; /* Asegúrate de que el body ocupe toda la altura de la pantalla */
+  margin: 0; /* Elimina cualquier margen por defecto */
+}
+
+.page-wrapper.shade-gradient {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('/public/images/shade.svg'),
+    url('/public/images/brick.svg');
+  background-size: cover, 47px 27px;
+  background-repeat: no-repeat, repeat;
+  background-position: center, top-left;
+  height: 100vh;
+  margin: 0;
+  min-width: 320px;
+}
