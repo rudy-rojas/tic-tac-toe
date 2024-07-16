@@ -1,9 +1,10 @@
-import Board from './components/Board';
-import 'animate.css';
-import Title from './components/Title';
-import './styles/App.css';
 import { useState } from 'react';
+import Board from './components/Board';
+import Title from './components/Title';
 import calculateWinner from './utils/calculateWinner'
+import 'animate.css';
+import './styles/App.css';
+
 const App = () => {
   const [squares, setSquares] = useState(Array.from({ length: 9 }).fill(null));
   const [classSquares, setClassSquares] = useState(
@@ -12,9 +13,7 @@ const App = () => {
 
   const [xIsNext, setXIsNext] = useState(true);
 
-  // let winner;
   const [winner, setWinner] = useState('');
-  // winner = calculateWinner(squares);
 
   let status;
   const handleClick = (i) => {
@@ -56,6 +55,7 @@ const App = () => {
     <>
       <main className='page-wrapper shade-gradient'>
         <Title title={'Tic tac toe'} />
+        <div>Status: {status}</div>
         <Board squares={squares} handleClick={handleClick} classSquares={classSquares} />
       </main>
     </>
