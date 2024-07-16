@@ -1,5 +1,5 @@
 const calculateWinner = (squares) => {
-  let result = null;
+  let result = '';
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -15,11 +15,13 @@ const calculateWinner = (squares) => {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       result = squares[a];
+      console.log('winnnnn: '+result)
     }
     else {
       i++;
     }
   }
-  return result;
+
+  return [result, lines[i]?lines[i]:[]];
 }
 export default calculateWinner;
