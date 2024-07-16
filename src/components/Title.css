@@ -5,7 +5,7 @@
 
 .main-title {
   font-family: DiloWorld;
-  font-size: 78px;
+  font-size: 3rem;
   background: -webkit-linear-gradient(135deg, cyan, magenta);
   -webkit-background-clip: text;
   background-clip: text;
@@ -15,4 +15,38 @@
   margin-left: 10px;
   margin-right: 10px;
 }
- 
+
+/* sm */
+@media (width >= 576px) and (width <= 767.98px) {
+  .main-title {
+    font-size: 4.5rem;
+  }
+}
+
+/* md */
+@media (width >= 768px) and (width <= 991.98px) {
+  .main-title {
+    font-size: 4.5rem;
+  }
+}
+
+/* lg */
+@media (width >= 992px) and (width <= 1199.98px) {
+  .main-title {
+    font-size: 5rem;
+  }
+}
+
+/* xl */
+@media (width >= 1200px) and (width <= 1399.98px) {
+  .main-title {
+    font-size: 5rem;
+  }
+}
+
+/* xxl */
+@media (width >= 1400px) {
+  .main-title {
+    font-size: 5rem;
+  }
+}

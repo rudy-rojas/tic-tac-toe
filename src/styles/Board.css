@@ -12,22 +12,22 @@
 }
 
 .square {
+  flex-grow: 1;
   min-width: 106px;
   min-height: 106px;
-  width: 33%;
-  height: 33%;
+  aspect-ratio: 1/1;
   max-width: 181px;
   max-height: 181px;
-  float: left;
   background-color: transparent;
   outline: none;
-  border: 1px solid red;
-  box-sizing: border-box;
+  border: none;
 }
+
+
 .square.simbol-x {
   background-image: url('/public/images/x.svg');
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  /* background-size: 100% 100%; */
 }
 .square.simbol-0 {
   background-image: url('/public/images/0.svg');
@@ -35,6 +35,6 @@
 }
 
 .board-row {
-  clear: both;
-  content: '';
+  display: flex;
+  justify-content: center;
 }
