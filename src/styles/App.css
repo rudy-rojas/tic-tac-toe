@@ -5,6 +5,7 @@ html {
 
 body {
   background-color: #121212;
+  box-sizing: border-box;
 }
 
 .corner-left-top {

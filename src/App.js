@@ -1,7 +1,9 @@
-import { useState } from 'react';
-import Board from './components/Board';
+import { useEffect, useState } from 'react';
 import Title from './components/Title';
-import calculateWinner from './utils/calculateWinner'
+import Board from './components/Board';
+import Status from './components/Status';
+import calculateWinner from './utils/calculateWinner';
+
 import 'animate.css';
 import './styles/App.css';
 
@@ -12,14 +14,20 @@ const App = () => {
   );
 
   const [xIsNext, setXIsNext] = useState(true);
-
   const [winner, setWinner] = useState('');
+  const [status, setStatus] = useState({
+    turn: 'x',
+    isFinish: false,
+    winner: '',
+  });
+  useEffect(() => {
+    handleStatus();
+  }, [xIsNext]);
 
-  let status;
+  // let status = { turn: 'x', isFinish: false, winner: '' };
   const handleClick = (i) => {
     let copyClassSquares = classSquares.slice();
     if (!squares[i] && winner === '') {
-
       copyClassSquares[i] = 'animate__bounceIn';
       setClassSquares(copyClassSquares);
 
@@ -30,7 +38,7 @@ const App = () => {
 
       const calculatedWinner = calculateWinner(copySquares);
       if (calculatedWinner[0]) {
-        console.log(calculatedWinner)
+        console.log(calculatedWinner);
         let copyClassSquares = classSquares.slice();
         const [a, b, c] = calculatedWinner[1];
         // setWinner(copySquares);
@@ -41,22 +49,28 @@ const App = () => {
         setClassSquares(copyClassSquares);
       }
     }
-
   };
 
-  if (winner) {
-    status = `Winner: Player ${winner}`;
+  const handleStatus = () => {
+    if (winner) {
+      setStatus((state) => ({ ...state, isFinish: true, winner: winner }));
+    } else {
+      setStatus((state) => ({ ...state, turn: `${xIsNext ? `x` : `o`}` }));
+    }
+  };
 
-  } else {
-    status = `Player ${xIsNext ? `X` : `o`}'s turn`;
-  }
+  console.log(status);
 
   return (
     <>
-      <main className='page-wrapper shade-gradient'>
+      <main className="page-wrapper shade-gradient">
         <Title title={'Tic tac toe'} />
-        <div>Status: {status}</div>
-        <Board squares={squares} handleClick={handleClick} classSquares={classSquares} />
+        <Status status={status} />
+        <Board
+          squares={squares}
+          handleClick={handleClick}
+          classSquares={classSquares}
+        />
       </main>
     </>
   );
